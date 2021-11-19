@@ -15,48 +15,56 @@ class KegControl extends React.Component {
         {
           name: 'Tractor Pull',
           brand: 'Wolves and People',
-          price: '6',
-          abv: '6.4',
-          quantity: '17',
+          price: 6,
+          abv: 6.4,
+          quantity: 17,
           id: 'tractorpull'
         },
         {
-          name: 'Hefeweisen',
+          name: 'Hefeweizen',
           brand: 'Widmer Brothers',
-          price: '5.5',
-          abv: '5.1',
-          quantity: '24',
+          price: 5.5,
+          abv: 5.1,
+          quantity: 24,
           id: 'hefe'
         },
         {
           name: 'Pub Lager',
           brand: '10 Barrels',
-          price: '4',
-          abv: '5.0',
-          quantity: '6',
+          price: 4,
+          abv: 5.0,
+          quantity: 6,
           id: 'publager'
         },
         {
           name: 'Honeycone',
           brand: 'Wolves & People',
-          price: '5.75',
-          abv: '5.8',
-          quantity: '0',
+          price: 5.75,
+          abv: 5.8,
+          quantity: 0,
           id: 'honeycone'
+        },
+        {
+          name: 'Schraderbräu',
+          brand: 'Hank Schrader',
+          price: 5,
+          abv: 6.2,
+          quantity: 12,
+          id: 'schraderbrau'
         }
       ],
       selectedKeg: null,
       editing: false,
-      placeholder: "Keg Name" // wip
     };
+
     this.handleClick = this.handleClick.bind(this);
-    this.handleEditChange = this.handleEditChange.bind(this); // wip
+    this.handleEditChange = this.handleEditChange.bind(this);
   }
-  //wip ---------
+
   handleEditChange(event) {
     this.setState({placeholder: event.target.placeholder.value});
   }
-  //wip ---------
+
   handleClick = () => {
     if (this.state.selectedKeg != null) {
       this.setState({
@@ -132,7 +140,7 @@ class KegControl extends React.Component {
       restockKeg: restockKeg
     });
   }
-  // *** END WIP READ INVENTORY CHANGES *** //
+
   
   render(){
     let currentlyVisibleState = null;
