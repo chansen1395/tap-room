@@ -11,7 +11,6 @@ function App() {
   return (
     <React.Fragment>
     <div className='background'>
-      {/* <body style={{backgroundColor:'gray'}}> */}
       <Container>
         <Row>
           <header className="App-header">
@@ -19,12 +18,11 @@ function App() {
           </header>
         </Row>
         <Row>
-        {/* <Col> */}
           <KegControl />
-        {/* </Col> */}
         </Row>
       </Container>
-      {/* </body> */}
+      <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
+      <br></br> <br></br> <br></br> <br></br> <br></br> <br></br>
       </div>
       </React.Fragment>
   );

@@ -13,7 +13,7 @@ function Keg(props) {
       style={{
         width: '18rem',
         margin: '15px',
-        padding: '5px',
+        padding: '25px',
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
