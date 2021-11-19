@@ -1,11 +1,9 @@
 import React from "react";
 import ReusableForm from "./ReusableForm";
 import PropTypes from "prop-types";
-import Keg from "./Keg";
 
 function EditKegForm (props) {
   const { keg } = props;
-
 
   function handleEditKegFormSubmission(event) {
     event.preventDefault();
@@ -17,8 +15,6 @@ function EditKegForm (props) {
       quantity: event.target.quantity.valueAsNumber, 
       id: keg.id});
   }
-
-  
 
   return (
     <React.Fragment>

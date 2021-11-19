@@ -13,7 +13,7 @@ function kegDetail(props){
   }
   
   else if (keg.quantity > 0) {
-    kegHeader = <h3>{keg.name} - low stock! </h3>;
+    kegHeader = <h3>{keg.name} - {keg.quantity} low stock! </h3>;
   } else {
     kegHeader = <h3>{keg.name} - is not in stock <span role="img">☹️</span></h3>;
   };

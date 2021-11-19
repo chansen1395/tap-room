@@ -1,5 +1,6 @@
+import React from "react";
 import '../App.css';
-import TapControl from "./KegControl";
+import KegControl from "./KegControl";
 
 
 function App() {
