@@ -7,17 +7,8 @@ function ReusableForm(props) {
 
   return (
     <React.Fragment>
-      <div className="card"
-        style={{
-          width: '18rem',
-          margin: '15px',
-          padding: '5px',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          opacity: .9
-          }}>
+      <div className="card custom-card">
+
       <form onSubmit={props.formSubmissionHandler}>
         
       <div className="card-title"><h2>Add/Update Keg</h2>
