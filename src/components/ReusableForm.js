@@ -1,9 +1,5 @@
 import React from "react";
 import PropTypes from "prop-types";
-import KegControl from "./KegControl";
-
-
-
 
 function ReusableForm(props) {
 
@@ -21,10 +17,14 @@ function ReusableForm(props) {
         <input
           type='number'
           name='price'
+          min='0'
           placeholder='Price per serving' />
         <input
           type='number'
           name='abv'
+          min='0'
+          max='100'
+          step='.1'
           placeholder='ABV %' />
         <input
           type='number'
