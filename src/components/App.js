@@ -10,17 +10,23 @@ import Col from 'react-bootstrap/Col';
 function App() {
   return (
     <React.Fragment>
-      <body style={{backgroundColor:'gray'}}>
+    <div className='background'>
+      {/* <body style={{backgroundColor:'gray'}}> */}
       <Container>
         <Row>
-          <Header />
+          <header className="App-header">
+            <Header />
+          </header>
         </Row>
         <Row>
+        {/* <Col> */}
           <KegControl />
+        {/* </Col> */}
         </Row>
       </Container>
-      </body>
-    </React.Fragment>
+      {/* </body> */}
+      </div>
+      </React.Fragment>
   );
 }
 
