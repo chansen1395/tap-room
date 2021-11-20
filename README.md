@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Tap Room
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### This application implements the use of CRUD and state changes in a basic React app.
 
-## Available Scripts
+#### By Connor Hansen
 
-In the project directory, you can run:
+## Technologies Used
 
-### `npm start`
+* React
+* JavaScript/JSX
+* HTML
+* CSS/Bootstrap
+* Node Package Manager
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Description
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+_This is primarily an app to demonstrate a basic React app integrating state and full CRUD capabilities. Users may create, view details, update, delete, "buy"/"restock" kegs and their contents._
 
-### `npm test`
+![Project Diagram](Diagram.png)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Setup/Installation Requirements
 
-### `npm run build`
+- _To clone and run from [GitHub Repo](https://github.com/chansen1395/tap-room):_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- _Use a program such as VSCode to view, run, and test the program._
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- _In order to set up and run the project, in bash at a
+ folder of your choice, type the following:_
+    1. **$ git clone https://github.com/chansen1395/tap-room.git**
+    2. **$ code .**
+    3. **$ cd YourFolder.Solution/ParkLookup**
+    4. **Install packages if not already installed:**
+    ```
+      $ npm install --save-exact react-scripts@3.2.0
+      $ npm install react-bootstrap bootstrap@5.1.3
+    ```
+    5. **$ npm watch run**
+    6. **navigate to http://localhost:3000/ in your browser to use the app**
+    
 
-### `npm run eject`
+- **Data Schema**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| Keg       |
+| --------- |
+| Name      |
+| Brand     | 
+| Price     | 
+| ABV       | 
+| Quantity  | 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Future Features
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* _Allow a user to add multiple beverages to a "cart" and check out._
 
-## Learn More
+## Known Bugs
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* _On the keg details page, styling slightly overlaps a button._
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
 
-### Code Splitting
+{Let me know if you run into any issues or have questions, ideas or concerns. I encourage you to contact me or make a contribution to the code.}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contact Information
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Connor Hansen: _{<chansen13@georgefox.edu>}_
+- _{[GitHub Repo - main](https://github.com/chansen1395/tap-room)}_
