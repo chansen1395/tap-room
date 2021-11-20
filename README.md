@@ -29,7 +29,7 @@ _This is primarily an app to demonstrate a basic React app integrating state and
  folder of your choice, type the following:_
     1. **$ git clone https://github.com/chansen1395/tap-room.git**
     2. **$ code .**
-    3. **$ cd YourFolder.Solution/ParkLookup**
+    3. **$ cd YourFolder/tap-room**
     4. **Install packages if not already installed:**
     ```
       $ npm install --save-exact react-scripts@3.2.0
