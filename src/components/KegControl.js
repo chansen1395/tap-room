@@ -16,7 +16,7 @@ class KegControl extends React.Component {
       mainKegList: [
         {
           name: 'Tractor Pull',
-          brand: 'Wolves and People',
+          brand: 'Wolves & People',
           price: 6,
           abv: 6.4,
           quantity: 17,
@@ -123,29 +123,31 @@ class KegControl extends React.Component {
   }
   
   
-  // Update changes to selected keg
-  // Change edit state and un-select a keg
+  // Update changes to selected keg (removing the old one, adding the updated version)
+  // Change edit and selectedKeg state to defaults
   handleEditingKegInList = (kegToEdit) => {
-
+    
     const editedMainKegList = this.state.mainKegList
-      .filter(keg => keg.id !== this.state.selectedKeg.id)
-      .concat(kegToEdit);
-
+    .filter(keg => keg.id !== this.state.selectedKeg.id)
+    .concat(kegToEdit);
+    
     this.setState({
       mainKegList: editedMainKegList,
       editing: false,
       selectedKeg: null
     });
   }
-
-
+  
+  
+  // If quantity is greater than 0, decrement quantity by one
+  // If quantity is not greater than 0, alert the user. Don't decrement
   handleBuyKeg = () => {
-
+    
     let buyKeg = this.state.mainKegList.filter(keg => keg.id === this.state.selectedKeg.id)[0];
-
+    
     if (buyKeg.quantity <= 0) {
       alert(buyKeg.name + " is out of stock. Please restock or choose another keg.");
-
+      
     } else {
       buyKeg = buyKeg.quantity--;
       this.setState({
@@ -153,8 +155,9 @@ class KegControl extends React.Component {
       });
     }
   }
-
-
+  
+  
+  // Increase quantity of the keg's contents by one
   handleRestockKeg = () => {
 
     let restockKeg = this.state.mainKegList.filter(keg => keg.id === this.state.selectedKeg.id)[0];
@@ -168,43 +171,51 @@ class KegControl extends React.Component {
 
 
   render() {
+
     let currentlyVisibleState = null;
     let buttonText = null;
 
+    // Controls what is returned to the user
+    // Switch to editing
     if (this.state.editing) {
       currentlyVisibleState = <EditKegForm
-        keg={this.state.selectedKeg}
-        onEditKeg={this.handleEditingKegInList} />
-
+      keg={this.state.selectedKeg}
+      onEditKeg={this.handleEditingKegInList} />
+      
       buttonText = "Stop Editing";
+      
+    // Switch to details
+  } else if (this.state.selectedKeg != null) {
+    currentlyVisibleState =
+    <KegDetail
+    keg={this.state.selectedKeg}
+    onClickingDelete={this.handleDeletingKeg}
+    onClickingEdit={this.handleEditClick}
+    onClickingBuy={this.handleBuyKeg}
+    onClickingRestock={this.handleRestockKeg} />
+    
+    buttonText = "Return to Keg List";
+  }
+  
+  // Switch to keg creation
+  else if (this.state.formVisibleOnPage) {
+    currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
+    buttonText = "Return to Keg List";
+    
+  // Default to display keg list if no conditions are met
+  } else {
+    currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleKegDetail} />;
+    buttonText = "Add Keg"
+  }
 
-    } else if (this.state.selectedKeg != null) {
-      currentlyVisibleState =
-        <KegDetail
-          keg={this.state.selectedKeg}
-          onClickingDelete={this.handleDeletingKeg}
-          onClickingEdit={this.handleEditClick}
-          onClickingBuy={this.handleBuyKeg}
-          onClickingRestock={this.handleRestockKeg} />
+  // Return state to user
+  return (
+    <React.Fragment>
+      {currentlyVisibleState}
+      <Button variant='success' size='lg' onClick={this.handleClick}>{buttonText}</Button> { /* new code */}
+    </React.Fragment>
+  );
 
-      buttonText = "Return to Keg List";
-    }
-
-    else if (this.state.formVisibleOnPage) {
-      currentlyVisibleState = <NewKegForm onNewKegCreation={this.handleAddingNewKegToList} />
-      buttonText = "Return to Keg List";
-
-    } else {
-      currentlyVisibleState = <KegList kegList={this.state.mainKegList} onKegSelection={this.handleKegDetail} />;
-      buttonText = "Add Keg"
-    }
-
-    return (
-      <React.Fragment>
-        {currentlyVisibleState}
-        <Button variant='success' size='lg' onClick={this.handleClick}>{buttonText}</Button> { /* new code */}
-      </React.Fragment>
-    );
   }
 }
 

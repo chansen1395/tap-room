@@ -14,8 +14,7 @@ function Keg(props) {
         <div className="card custom-card">
 
           <h3 className="card-title" style={{ textAlign: 'center' }}>{props.name}</h3>
-          <hr></hr>
-          <h3 className="card-body" style={{ textAlign: 'center' }}>{props.brand}</h3>
+          <h5 className="card-body" style={{ textAlign: 'center' }}>{props.brand}</h5>
 
           <Button variant='primary' size='lg' onClick={() =>
             props.whenKegClicked(props.id)}>Keg Details</Button>
